@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  bitcoin-price-service:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - UPDATE_INTERVAL_MS=10000
+      - SERVICE_FEE_PERCENT=0.01
+    restart: unless-stopped
